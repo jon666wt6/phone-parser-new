@@ -35,8 +35,8 @@ async function runScraper(regions, proxyType) {
       );
 
       await Promise.race([
-        new Promise(() => {}), // stay alive indefinitely
-        fatalErrorPromise, // rejection triggers restart
+        new Promise(() => {}),
+        fatalErrorPromise,
       ]);
     } catch (error) {
       if (currentProxy?.id) {
@@ -50,7 +50,6 @@ async function runScraper(regions, proxyType) {
       }
 
       // 🌀 Random new region next time
-      console.log(`[${region}] Restarting in 1s... random region next`);
       await new Promise((r) => setTimeout(r, 1_000));
     }
   }

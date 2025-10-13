@@ -52,8 +52,7 @@ async function fetchProxyByType(proxyType) {
       await dbClient.query("COMMIT");
       return proxy;
     } else {
-      console.debug(`[fetchProxyByType] No available proxies for type="${proxyType}", rolling back`);
-      await dbClient.query("ROLLBACK");
+      await new Promise((r) => setTimeout(r, 60_000));
       throw new Error(`No available proxy found for type: ${proxyType}`);
     }
   } catch (error) {
