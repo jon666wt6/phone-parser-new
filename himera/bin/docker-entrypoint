@@ -1,14 +1,21 @@
-#!/bin/bash -e
+#!/bin/bash
+set -e
 
-# Enable jemalloc for reduced memory usage and latency.
-if [ -z "${LD_PRELOAD+x}" ]; then
-    LD_PRELOAD=$(find /usr/lib -name libjemalloc.so.2 -print -quit)
-    export LD_PRELOAD
+echo "[ENTRYPOINT] Checking database schema for $RAILS_ENV..."
+
+# Wait for DB (very basic wait loop)
+until pg_isready -h "$DB_HOST" -p "${DB_PORT:-5432}" -U "$DB_USER"; do
+  echo "Waiting for Postgres..."
+  sleep 2
+done
+
+# Try to load schema.rb if tables are missing
+if ! bundle exec rails runner "ActiveRecord::Base.connection.table_exists?('regions')" >/dev/null 2>&1; then
+  echo "[ENTRYPOINT] Database seems empty — loading db/schema.rb..."
+  bundle exec rails db:schema:load || true
+else
+  echo "[ENTRYPOINT] Database already initialized."
 fi
 
-# If running the rails server then create or migrate existing database
-if [ "${@: -2:1}" == "./bin/rails" ] && [ "${@: -1:1}" == "server" ]; then
-  ./bin/rails db:prepare
-fi
-
-exec "${@}"
+# Continue to main process (Thruster/Rails)
+exec "$@"
