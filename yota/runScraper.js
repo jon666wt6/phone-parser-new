@@ -50,8 +50,8 @@ async function runScraper(regions, proxyType) {
       }
 
       // 🌀 Random new region next time
-      console.log(`[${region}] Restarting in 60s... random region next`);
-      await new Promise((r) => setTimeout(r, 60_000));
+      console.log(`[${region}] Restarting in 1s... random region next`);
+      await new Promise((r) => setTimeout(r, 1_000));
     }
   }
 }
