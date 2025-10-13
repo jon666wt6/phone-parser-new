@@ -10,6 +10,7 @@ async function initializeBrowserSession(proxyType, lastMaskIndex, lastOffset, re
 
   const browser = await puppeteer.launch({
     headless: true,
+    executablePath: '/usr/bin/google-chrome',
     args: [
       `--proxy-server=${proxy.url}`,
       "--window-size=1920,1080",
