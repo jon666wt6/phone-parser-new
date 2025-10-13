@@ -20,3 +20,7 @@ test:
 production:
   <<: *default
   database: app_production
+
+cable:
+  <<: *default
+  database: <%= ENV.fetch("DB_NAME", "app_production") %>
