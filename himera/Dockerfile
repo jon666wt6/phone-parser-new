@@ -59,7 +59,9 @@ RUN groupadd --system --gid 1000 rails && \
 USER 1000:1000
 
 COPY bin/docker-entrypoint /usr/local/bin/docker-entrypoint
+USER root
 RUN chmod +x /usr/local/bin/docker-entrypoint
+USER rails
 
 ENTRYPOINT ["/usr/local/bin/docker-entrypoint"]
 
