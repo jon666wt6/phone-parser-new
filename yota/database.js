@@ -9,24 +9,35 @@ const settings = {
   database: process.env.DB_NAME || "app_production",
 };
 
+console.log("[DB] Connecting with settings:", {
+  host: settings.host,
+  port: settings.port,
+  user: settings.user,
+  database: settings.database,
+});
+
 const dbClient = new Client(settings);
 
 (async () => {
   try {
     await dbClient.connect();
+    console.log("[DB] ✅ Connected successfully.");
   } catch (err) {
-    console.error("[DB] Connection error:", err.message);
+    console.error("[DB] ❌ Connection error:", err.message);
     console.error(err.stack);
     process.exit(1);
   }
 })();
 
 async function fetchProxyByType(proxyType) {
+  console.debug(`[DB] fetchProxyByType called with type="${proxyType}"`);
   try {
     if (typeof proxyType !== "string" || proxyType.trim() === "") {
       throw new Error("proxyType must be a non-empty string");
     }
+
     await dbClient.query("BEGIN");
+    console.debug("[DB] Transaction begun for fetchProxyByType");
 
     const query = `
       WITH selected_proxy AS (
@@ -49,15 +60,16 @@ async function fetchProxyByType(proxyType) {
 
     if (result.rows.length > 0) {
       const proxy = result.rows[0];
+      console.debug(`[DB] Selected proxy:`, proxy);
       await dbClient.query("COMMIT");
       return proxy;
     } else {
-      console.debug(`[fetchProxyByType] No available proxies for type="${proxyType}", rolling back`);
+      console.debug(`[fetchProxyByType] No available proxies for type="${proxyType}" — rolling back`);
       await dbClient.query("ROLLBACK");
       throw new Error(`No available proxy found for type: ${proxyType}`);
     }
   } catch (error) {
-    console.error(`[fetchProxyByType] Error fetching proxy for type="${proxyType}":`, error.message);
+    console.error(`[fetchProxyByType] Error:`, error.message);
     try {
       await dbClient.query("ROLLBACK");
       console.debug("[fetchProxyByType] Transaction rolled back");
@@ -74,6 +86,7 @@ function normalizePhoneNumber(phoneNumber) {
 }
 
 async function savePhonesToLocalDB(phones, region, digits, currentOffset, proxyType) {
+  console.debug(`[savePhonesToLocalDB] Called for region=${region}, phones=${phones.length}`);
   try {
     const query = `
       INSERT INTO phones (phonenumber, region, operator, status, price)
@@ -97,14 +110,8 @@ async function savePhonesToLocalDB(phones, region, digits, currentOffset, proxyT
 
     const result = await dbClient.query(query, values);
 
-    const RED = "\u001b[91m";
-    const GREEN = "\u001b[92m";
-    const RESET = "\u001b[0m";
-    const savedColor = result.rowCount === 0 ? RED : GREEN;
-
-    console.log(
-      `Region: ${GREEN}${region}${RESET} Proxy: ${GREEN}${proxyType}${RESET} Digits: ${digits} Offset: ${currentOffset} ` +
-        `Saved: ${savedColor}${result.rowCount}${RESET}/${phones.length} phones`
+    console.info(
+      `[savePhonesToLocalDB] Region=${region} Proxy=${proxyType} Offset=${currentOffset} Saved=${result.rowCount}/${phones.length}`
     );
   } catch (error) {
     console.error("Error saving phones:", error.message);
@@ -112,6 +119,7 @@ async function savePhonesToLocalDB(phones, region, digits, currentOffset, proxyT
 }
 
 async function fetchLastScrapingState(operator, region) {
+  console.debug(`[DB] fetchLastScrapingState(${operator}, ${region})`);
   try {
     const query = `
       SELECT last_parsed_number, mask
@@ -123,6 +131,7 @@ async function fetchLastScrapingState(operator, region) {
 
     if (result.rows.length > 0) {
       const row = result.rows[0];
+      console.debug(`[DB] State found:`, row);
       return {
         lastMaskIndex: parseInt(row.mask, 10) || 0,
         lastOffset: parseInt(row.last_parsed_number, 10) || 0,
@@ -132,15 +141,13 @@ async function fetchLastScrapingState(operator, region) {
       return { lastMaskIndex: 0, lastOffset: 0 };
     }
   } catch (error) {
-    console.error(
-      `[${region}] Error fetching scraping state for operator ${operator}:`,
-      error.message
-    );
+    console.error(`[${region}] Error fetching scraping state for operator ${operator}:`, error.message);
     return { lastMaskIndex: 0, lastOffset: 0 };
   }
 }
 
 async function updateScrapingState(operator, region, maskIndex, offset) {
+  console.debug(`[DB] updateScrapingState(${operator}, ${region}, maskIndex=${maskIndex}, offset=${offset})`);
   try {
     const query = `
       UPDATE regions
@@ -149,15 +156,14 @@ async function updateScrapingState(operator, region, maskIndex, offset) {
     `;
     const params = [maskIndex, offset, region, operator];
     await dbClient.query(query, params);
+    console.debug(`[DB] State updated successfully for ${region}`);
   } catch (error) {
-    console.error(
-      `[DB] Error updating state for region ${region}:`,
-      error.message
-    );
+    console.error(`[DB] Error updating state for region ${region}:`, error.message);
   }
 }
 
 async function fetchRegionsByOperator(operator, limit) {
+  console.debug(`[DB] fetchRegionsByOperator(${operator}, limit=${limit})`);
   try {
     const query = `
       SELECT region, mask_length
@@ -168,6 +174,7 @@ async function fetchRegionsByOperator(operator, limit) {
       LIMIT $2;
     `;
     const result = await dbClient.query(query, [operator, limit]);
+    console.debug(`[DB] Regions fetched: ${result.rows.length}`);
     return result.rows;
   } catch (error) {
     console.error(`Error fetching regions for operator ${operator}:`, error.message);
@@ -176,6 +183,7 @@ async function fetchRegionsByOperator(operator, limit) {
 }
 
 async function blockProxy(proxyId) {
+  console.debug(`[DB] blockProxy(${proxyId})`);
   try {
     if (typeof proxyId !== "number" || proxyId <= 0) {
       throw new Error("proxyId must be a positive number");
@@ -185,12 +193,10 @@ async function blockProxy(proxyId) {
       SET yota_blocked_at = NOW()
       WHERE id = $1;
     `;
-    const result = await dbClient.query(query, [proxyId]);
+    await dbClient.query(query, [proxyId]);
+    console.warn(`[DB] Proxy ID ${proxyId} marked as blocked`);
   } catch (error) {
-    console.error(
-      `[blockProxy] Error blocking proxy ID ${proxyId}:`,
-      error.message
-    );
+    console.error(`[blockProxy] Error blocking proxy ID ${proxyId}:`, error.message);
   }
 }
 
