@@ -20,7 +20,7 @@ ENV NODE_ENV=production \
     DB_HOST=db \
     DB_PORT=5432 \
     DB_USER=postgres \
-    DB_NAME=app_development
+    DB_NAME=app_production
 
 # Your app’s main entrypoint( Not for now )
 # CMD ["node", "main.js"]
