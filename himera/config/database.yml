@@ -24,3 +24,7 @@ production:
 cable:
   <<: *default
   database: <%= ENV.fetch("DB_NAME", "app_production") %>
+
+queue:
+  <<: *default
+  database: <%= ENV.fetch("DB_NAME", "app_production") %>
