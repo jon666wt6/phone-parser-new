@@ -9,6 +9,14 @@ default: &default
   password: <%= ENV.fetch("DB_PASSWORD", "") %>
   database: <%= ENV.fetch("DB_NAME", "app_production") %>
 
+development:
+  <<: *default
+  database: app_development
+
+test:
+  <<: *default
+  database: app_test
+
 production:
   <<: *default
   database: app_production
