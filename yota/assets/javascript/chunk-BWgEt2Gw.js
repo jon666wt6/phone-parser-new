@@ -1,0 +1,1 @@
+import {cN as vn}from'./main-GV3FATOT.js';var n$1=(()=>{class t{transform(r){return typeof r=="string"?r.replace(/<.*?>/g,""):""}static{this.\u0275fac=function(i){return new(i||t)};}static{this.\u0275pipe=vn({name:"stripHtml",type:t,pure:true});}}return t})();export{n$1 as n};

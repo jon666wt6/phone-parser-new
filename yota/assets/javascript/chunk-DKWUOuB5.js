@@ -1,0 +1,1 @@
+var n=function(r){return r.Voice="VOICE",r.Tablet="TABLET",r.Modem="MODEM",r}(n||{});var t=function(r){return r.Yota="YOTA",r.Partner="PARTNER",r}(t||{});export{n,t};

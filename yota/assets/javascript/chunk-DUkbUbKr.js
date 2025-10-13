@@ -1,0 +1,1 @@
+var e$1=function(r){return r.Allperiod="ALLPERIOD",r.Oneperiod="ONEPERIOD",r}(e$1||{});export{e$1 as e};

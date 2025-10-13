@@ -1,0 +1,1 @@
+var T=function(M){return M.MJuta="mJUTA",M.MMegafon="mMEGAFON",M.MBeeline="mBEELINE",M.MMts="mMTS",M.MTele2="mTELE2",M.Other="Other",M}(T||{});export{T};
