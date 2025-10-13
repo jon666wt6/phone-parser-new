@@ -20,7 +20,7 @@ async function setupInterceptors(page, region, mask_length, proxyType, state) {
 
   // Block lists
   const blockTypeList = ["image", "font", "stylesheet"];
-  const blockUrlList = [".svg", ".ico", "mail.ru", "mc.yandex.ru", "vk.com", "rum/events", "favicon"];
+  const blockUrlList = [".svg", ".ico", "mail.ru", "mc.yandex.ru", "vk.com", "rum/events", "favicon", "uaas.yandex.ru"];
 
   // --- Load all JS overrides dynamically ---
   const jsFolder = path.resolve(process.cwd(), "assets", "javascript");
