@@ -58,6 +58,7 @@
       volumes:
         - ./yota:/app
       working_dir: /app
+      command: ["node", "orchestrate.js"]
 
   volumes:
     pgdata:
