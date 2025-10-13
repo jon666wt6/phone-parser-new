@@ -6,7 +6,7 @@
       environment:
         POSTGRES_USER: ${DB_USER:-postgres}
         POSTGRES_PASSWORD: ${DB_PASSWORD:-postgres}
-        POSTGRES_DB: ${DB_NAME:-app_development}
+        POSTGRES_DB: ${DB_NAME:-app_production}
       volumes:
         - pgdata:/var/lib/postgresql/data
       ports:
@@ -31,11 +31,11 @@
         db:
           condition: service_healthy
       environment:
-        RAILS_ENV: development
+        RAILS_ENV: production
         DB_HOST: db
         DB_USER: ${DB_USER:-postgres}
         DB_PASSWORD: ${DB_PASSWORD:-postgres}
-        DB_NAME: ${DB_NAME:-app_development}
+        DB_NAME: ${DB_NAME:-app_production}
         DB_PORT: ${DB_PORT:-5432}
       command: ./bin/rails server -b 0.0.0.0 -p 80
 
@@ -53,7 +53,7 @@
         DB_PORT: 5432
         DB_USER: ${DB_USER:-postgres}
         DB_PASSWORD: ${DB_PASSWORD:-postgres}
-        DB_NAME: ${DB_NAME:-app_development}
+        DB_NAME: ${DB_NAME:-app_production}
         NODE_ENV: production
       volumes:
         - ./yota:/app
