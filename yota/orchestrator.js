@@ -6,10 +6,10 @@ const operator = "yota";
 
 async function orchestrate() {
   const proxyConfig = {
-    "1986": 3,
-    "proxy6": 3,
-    "lightning": 3,
-    // "asocks": 1,
+    // "1986": 3,
+    // "proxy6": 3,
+    "lightning": 5,
+    "asocks": 5,
   };
 
   console.log("[ORCH] Proxy configuration:", proxyConfig);

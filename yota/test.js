@@ -6,9 +6,9 @@
 const { initializeBrowserSession } = require("./helpers/browser");
 
 async function main() {
-  const proxyType = "lightning"; // adjust to match your DB proxy type
-  const region = "test-region"; // dummy region since this is a dry-run
-  const mask_length = 10; // arbitrary
+  const proxyType = "lightning";
+  const region = "2082";
+  const mask_length = 10;
   const lastMaskIndex = 0;
   const lastOffset = 0;
 
@@ -30,7 +30,7 @@ async function main() {
 
     console.log("[TEST] Navigating to https://www.yota.ru/phone-number ...");
 
-    await page.waitForTimeout(10000); // keep open 10s for observation
+    await new Promise((r) => setTimeout(r, 600_000)); // open for 10 min
 
     console.log("[TEST] ✅ Page loaded successfully!");
 
