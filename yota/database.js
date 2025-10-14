@@ -159,7 +159,7 @@ async function updateScrapingState(operator, region, maskIndex, offset) {
 async function fetchRegionsByOperator(operator, limit) {
   try {
     const query = `
-      SELECT region, mask_length
+      SELECT region, mask_length, full_name
       FROM regions
       WHERE operator = $1
         AND processing = true

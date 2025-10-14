@@ -1,9 +1,13 @@
 // helpers/browser.js
-const puppeteer = require("puppeteer");
+const puppeteer = require("puppeteer-extra");
+const StealthPlugin = require("puppeteer-extra-plugin-stealth");
+const randomUseragent = require('random-useragent');
 const fs = require("fs");
 const path = require("path");
 const { setupInterceptors } = require("./intercept-search");
 const { fetchProxyByType } = require("../database");
+
+puppeteer.use(StealthPlugin());
 
 async function initializeBrowserSession(proxyType, lastMaskIndex, lastOffset, region, mask_length) {
   let proxy = await fetchProxyByType(proxyType);
@@ -18,12 +22,27 @@ async function initializeBrowserSession(proxyType, lastMaskIndex, lastOffset, re
       "--no-sandbox",
       "--disable-dev-shm-usage",
       "--disable-setuid-sandbox",
-      "--auto-open-devtools-for-tabs",
+      // "--auto-open-devtools-for-tabs",
     ],
   });
 
   const [page] = await browser.pages();
-  await page.setViewport({ width: 1920, height: 1080 });
+
+  // ✅ Generate a realistic Windows/Chrome user agent
+  const userAgent = randomUseragent.getRandom(ua => {
+    return ua.osName === 'Windows' && ua.browserName === 'Chrome';
+  });
+  await page.setUserAgent(userAgent);
+
+  // ✅ Add Russian language headers to match the user profile
+  await page.setExtraHTTPHeaders({
+    'Accept-Language': 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7'
+  });
+
+  // ✅ Randomize viewport slightly to avoid identical fingerprints
+  const width = 1920 + Math.floor(Math.random() * 80);
+  const height = 1080 + Math.floor(Math.random() * 80);
+  await page.setViewport({ width, height });
 
   if (proxy.username && proxy.password) {
     await page.authenticate({ username: proxy.username, password: proxy.password });
@@ -37,9 +56,6 @@ async function initializeBrowserSession(proxyType, lastMaskIndex, lastOffset, re
     await browser.close().catch((e) => console.error("Error closing failed browser:", e));
     throw new Error("Browser setup failed: Could not load the initial page.");
   }
-
-  const pageLogicScript = fs.readFileSync(path.resolve(__dirname, "page-logic.js"), "utf8");
-  await page.addScriptTag({ content: pageLogicScript });
 
   return { browser, page, proxy };
 }

@@ -14,13 +14,16 @@ function getYandexCookie() {
 
 // Helper function to generate the required X-User-Hash
 async function generateXUserHash() {
-  const userAgent = navigator.userAgent;
+  const userAgent = window.__SCRAPER_USER_AGENT__ || navigator.userAgent;
   const afs = window.__env?.AFS || "";
   const yandexCookie = getYandexCookie();
   const now = Math.floor(Date.now() / 1000);
 
   const input = `${userAgent}${afs}${now}${yandexCookie}`;
-  const hashBuffer = await crypto.subtle.digest("SHA-512", new TextEncoder().encode(input));
+  const hashBuffer = await crypto.subtle.digest(
+    "SHA-512",
+    new TextEncoder().encode(input)
+  );
   let hashHex = Array.from(new Uint8Array(hashBuffer))
     .map((b) => b.toString(16).padStart(2, "0"))
     .join("");

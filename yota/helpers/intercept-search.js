@@ -33,6 +33,7 @@ async function setupInterceptors(page, region, mask_length, proxyType, state) {
   }
 
   await page.setRequestInterception(true);
+  let searchRequestCount = 0;
   page.on("request", (req) => {
     const url = req.url();
     const resourceType = req.resourceType();
@@ -40,6 +41,15 @@ async function setupInterceptors(page, region, mask_length, proxyType, state) {
     // 1. Handle Yota search API.
     // YOU WONT SEE IT CHANGED IN NETWORK TAB. BUT IT DOES INTERCEPT
     if (url.includes("/yws-api/number/search")) {
+      searchRequestCount += 1;
+
+      // ✅ Let the first request pass through untouched
+      if (searchRequestCount <= 1) {
+        console.log("🟡 [response] Skipping first search response (normal init)");
+        return req.continue();
+      }
+
+      // 🚀 Modify subsequent requests
       const mask = currentMaskIndex.toString().padStart(mask_length, "0");
       const newUrl = buildSearchUrl(region, mask, currentOffset);
 
@@ -74,6 +84,9 @@ async function setupInterceptors(page, region, mask_length, proxyType, state) {
   page.on("response", async (res) => {
     if (!res.url().includes("/yws-api/number/search")) return;
 
+    // 🚫 Skip handling for first response
+    if (searchRequestCount <= 1) { return; }
+
     try {
       const status = res.status();
       if (status !== 200) throw new Error(`HTTP ${status}`);
@@ -82,37 +95,33 @@ async function setupInterceptors(page, region, mask_length, proxyType, state) {
       const phonesToSave = parseAndPrepareData(rawData, region, "yota");
 
       if (phonesToSave.length > 0) {
-        await savePhonesToLocalDB(
-          phonesToSave,
-          region,
-          currentMaskIndex.toString().padStart(mask_length, "0"),
-          currentOffset,
-          proxyType
-        );
+        await savePhonesToLocalDB(phonesToSave, region, currentMaskIndex.toString().padStart(mask_length, "0"), currentOffset, proxyType);
 
         if (phonesToSave.length < 10) {
-          // ✅ Less than 10 results → move to next mask
+          // ✅ less than 10 → new mask
           currentMaskIndex++;
           currentOffset = 0;
-          await updateScrapingState("yota", region, currentOffset, currentMaskIndex);
-          // console.log(`[${region}] Saved ${phonesToSave.length} phones. Moving to mask ${currentMaskIndex}`);
         } else {
-          // ✅ Full batch of 10 → continue with next offset
+          // ✅ batch of 10 → next offset
           currentOffset += 10;
-          await updateScrapingState("yota", region, currentOffset, currentMaskIndex);
-          // console.log(`[${region}] ✅ Saved ${phonesToSave.length} phones (mask=${currentMaskIndex}, offset=${currentOffset})`);
+
+          // 🧠 if offset reached 490, reset + move to next mask
+          if (currentOffset >= 490) {
+            console.log(`[${region}] ⚙️ offset=${currentOffset} reached 490 → advancing mask`);
+            currentOffset = 0;
+            currentMaskIndex++;
+          }
         }
+
+        await updateScrapingState("yota", region, currentOffset, currentMaskIndex);
       } else {
-        // ✅ No results at all → move to next mask
+        // ✅ no phones → next mask
         currentMaskIndex++;
         currentOffset = 0;
         await updateScrapingState("yota", region, currentOffset, currentMaskIndex);
-        // console.log(`[${region}] No phones found. Moving to mask ${currentMaskIndex}`);
       }
 
-      if (currentMaskIndex >= endMask) {
-        console.log(`[${region}] 🎉 Finished all masks.`);
-      }
+      if (currentMaskIndex >= endMask) { console.log(`[${region}] 🎉 Finished all masks.`); }
 
       consecutiveErrors = 0;
 
@@ -134,7 +143,7 @@ async function setupInterceptors(page, region, mask_length, proxyType, state) {
       console.error(`[${region}][${proxyType}] Response error #${consecutiveErrors}:`, err.message);
 
       if (consecutiveErrors >= maxConsecutiveErrors) {
-        console.error(`[${region}] ❌ ${consecutiveErrors} consecutive errors. Triggering restart...`);
+        // console.error(`[${region}][${proxyType}] ❌ ${consecutiveErrors} consecutive errors. Triggering restart...`);
         // Instead of throw, emit event
         page.emit("fatal-error", new Error("Too many consecutive errors in intercept"));
       }

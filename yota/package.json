@@ -14,7 +14,8 @@
     "puppeteer": "^24.9.0",
     "puppeteer-extra": "^3.3.6",
     "puppeteer-extra-plugin-stealth": "^2.11.2",
+    "random-useragent": "^0.5.0",
     "ua-parser-js": "^2.0.4",
-    "user-agents": "^1.1.583"
+    "user-agents": "^1.1.668"
   }
 }
