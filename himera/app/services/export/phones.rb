@@ -4,6 +4,10 @@ module Export
   class Phones
     EXPORT_DIR = Rails.root.join("exports")
 
+    def self.call
+      new.call
+    end
+
     def initialize(scope: Phone.where.not(status: "exported"), filename: default_filename)
       @scope = scope
       @filename = filename

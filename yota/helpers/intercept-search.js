@@ -16,7 +16,7 @@ async function setupInterceptors(page, region, mask_length, proxyType, state) {
 
   // Track consecutive errors
   let consecutiveErrors = 0;
-  const maxConsecutiveErrors = 2;
+  const maxConsecutiveErrors = 1;
 
   // Block lists
   const blockTypeList = ["image", "font", "stylesheet"];
@@ -83,86 +83,70 @@ async function setupInterceptors(page, region, mask_length, proxyType, state) {
   // --- Response Interceptor ---
   page.on("response", async (res) => {
     if (!res.url().includes("/yws-api/number/search")) return;
-    if (searchRequestCount <= 1) return;
+
+    // 🚫 Skip handling for first response
+    if (searchRequestCount <= 1) { return; }
 
     try {
       const status = res.status();
-      if (status !== 200) {
-        throw new Error(`Request failed with HTTP status ${status}`);
-      }
+      if (status !== 200) throw new Error(`HTTP ${status}`);
 
       const rawData = await res.json();
       const phonesToSave = parseAndPrepareData(rawData, region, "yota");
 
       if (phonesToSave.length > 0) {
-        await savePhonesToLocalDB(
-          phonesToSave,
-          region,
-          currentMaskIndex.toString().padStart(mask_length, "0"),
-          currentOffset,
-          proxyType
-        );
+        await savePhonesToLocalDB(phonesToSave, region, currentMaskIndex.toString().padStart(mask_length, "0"), currentOffset, proxyType);
 
         if (phonesToSave.length < 10) {
+          // ✅ less than 10 → new mask
           currentMaskIndex++;
           currentOffset = 0;
         } else {
+          // ✅ batch of 10 → next offset
           currentOffset += 10;
+
+          // 🧠 if offset reached 490, reset + move to next mask
           if (currentOffset >= 490) {
+            console.log(`[${region}] ⚙️ offset=${currentOffset} reached 490 → advancing mask`);
             currentOffset = 0;
             currentMaskIndex++;
           }
         }
+
+        await updateScrapingState("yota", region, currentOffset, currentMaskIndex);
       } else {
+        // ✅ no phones → next mask
         currentMaskIndex++;
         currentOffset = 0;
+        await updateScrapingState("yota", region, currentOffset, currentMaskIndex);
       }
 
-      await updateScrapingState("yota", region, currentOffset, currentMaskIndex);
-      if (currentMaskIndex >= endMask) {
-        console.log(`[${region}] 🎉 Finished all masks.`);
-        return; // Stop processing if we are done
-      }
+      if (currentMaskIndex >= endMask) { console.log(`[${region}] 🎉 Finished all masks.`); }
 
-      // Reset error count on success
       consecutiveErrors = 0;
-    } catch (err) {
-      consecutiveErrors++;
-      console.error(
-        `[${region}][${proxyType}] Response error #${consecutiveErrors}:`,
-        err.message
-      );
 
-      if (consecutiveErrors >= maxConsecutiveErrors) {
-        console.error(
-          `[${region}][${proxyType}] ❌ Reached max consecutive errors. Triggering restart...`
-        );
-        page.emit("fatal-error", new Error("Too many consecutive API errors"));
-        return; // 🛑 IMPORTANT: Stop execution here on fatal error
-      }
-    }
-
-    // --- This block now runs after BOTH success and recoverable errors ---
-    try {
-      const loadMoreButton = await page.evaluateHandle(() => {
-        return [...document.querySelectorAll("button")].find((el) => {
-          const text = el.textContent.trim();
-          return text === "Показать еще" || text === "Загрузить другие номера";
-        });
+      const btn = await page.evaluateHandle(() => {
+        return Array.from(document.querySelectorAll("button"))
+          .find(el => {
+            const text = el.textContent.trim();
+            return text === "Показать еще" || text === "Загрузить другие номера";
+          });
       });
 
-      if (loadMoreButton && loadMoreButton.asElement()) {
-        await page.evaluate((el) => el.removeAttribute("disabled"), loadMoreButton);
-        await loadMoreButton.click();
-      } else {
-        console.warn(`[${region}] Could not find "Load More" button to click.`);
+      if (btn) {
+        await page.evaluate((el) => el.removeAttribute("disabled"), btn);
+        // console.log("🔘 Clicking Load More button after response...");
+        await btn.click();
       }
-    } catch (clickErr) {
-      console.error(
-        `[${region}] Failed to click "Load More" button, triggering restart.`,
-        clickErr.message
-      );
-      page.emit("fatal-error", new Error("Could not click the next page button"));
+    } catch (err) {
+      consecutiveErrors++;
+      console.error(`[${region}][${proxyType}] Response error #${consecutiveErrors}:`, err.message);
+
+      if (consecutiveErrors >= maxConsecutiveErrors) {
+        // console.error(`[${region}][${proxyType}] ❌ ${consecutiveErrors} consecutive errors. Triggering restart...`);
+        // Instead of throw, emit event
+        page.emit("fatal-error", new Error("Too many consecutive errors in intercept"));
+      }
     }
   });
 }

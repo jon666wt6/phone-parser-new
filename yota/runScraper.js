@@ -30,6 +30,7 @@ async function runScraper(regions, proxyType) {
       await Promise.race([new Promise(() => {}), fatalErrorPromise,]);
     } catch (error) {
       if (currentProxy?.id) { await blockProxy(currentProxy.id); }
+      console.log(`[${region}][${proxyType}] FATAL ERROR ${error.message}`);
 
       if (browser) {
         await browser.close().catch((err) => console.error(`[${region}] Error closing browser:`, err));

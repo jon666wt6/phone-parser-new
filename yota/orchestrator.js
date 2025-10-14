@@ -8,14 +8,14 @@ async function orchestrate() {
   const proxyConfig = {
     "1986": 3,
     "proxy6": 3,
-    "asocks": 3,
     "lightning": 3,
+    // "asocks": 1,
   };
 
   console.log("[ORCH] Proxy configuration:", proxyConfig);
 
   const totalCount = Object.values(proxyConfig).reduce((a, b) => a + b, 0);
-  const regions = await fetchRegionsByOperator(operator, totalCount * 2); // fetch a little extra for randomization
+  const regions = await fetchRegionsByOperator(operator, totalCount * 2);
 
   console.log(`[ORCH] Fetched ${regions.length} regions to process.`);
 
@@ -24,9 +24,7 @@ async function orchestrate() {
 
   for (const [proxyType, amount] of Object.entries(proxyConfig)) {
     for (let i = 0; i < amount; i++) {
-      console.log(
-        `[ORCH] Launching scraper ${scraperPromises.length + 1}: proxyType=${proxyType}`
-      );
+      console.log(`[ORCH] Launching scraper ${scraperPromises.length + 1}: proxyType=${proxyType}`);
 
       // each scraper gets full region list
       scraperPromises.push(runScraper(regions, proxyType));
@@ -34,9 +32,7 @@ async function orchestrate() {
     }
   }
 
-  console.log(
-    `[ORCH] All ${scraperPromises.length} scrapers launched. Monitoring...`
-  );
+  console.log(`[ORCH] All ${scraperPromises.length} scrapers launched. Monitoring...`);
 
   await Promise.all(scraperPromises);
 }
