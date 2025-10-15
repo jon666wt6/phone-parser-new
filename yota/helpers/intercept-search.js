@@ -44,10 +44,7 @@ async function setupInterceptors(page, region, mask_length, proxyType, state) {
       searchRequestCount += 1;
 
       // ✅ Let the first request pass through untouched
-      if (searchRequestCount <= 1) {
-        console.log("🟡 [response] Skipping first search response (normal init)");
-        return req.continue();
-      }
+      if (searchRequestCount <= 1) { return req.continue(); }
 
       // 🚀 Modify subsequent requests
       const mask = currentMaskIndex.toString().padStart(mask_length, "0");
@@ -140,11 +137,9 @@ async function setupInterceptors(page, region, mask_length, proxyType, state) {
       }
     } catch (err) {
       consecutiveErrors++;
-      console.error(`[${region}][${proxyType}] Response error #${consecutiveErrors}:`, err.message);
+      // console.error(`[${region}][${proxyType}] Response error #${consecutiveErrors}:`, err.message);
 
       if (consecutiveErrors >= maxConsecutiveErrors) {
-        // console.error(`[${region}][${proxyType}] ❌ ${consecutiveErrors} consecutive errors. Triggering restart...`);
-        // Instead of throw, emit event
         page.emit("fatal-error", new Error("Too many consecutive errors in intercept"));
       }
     }
