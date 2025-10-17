@@ -163,13 +163,16 @@ async function fetchRegionsByOperator(operator, limit) {
       FROM regions
       WHERE operator = $1
         AND processing = true
-      ORDER BY (mask::int) ASC
+      ORDER BY mask::integer ASC
       LIMIT $2;
     `;
     const result = await dbClient.query(query, [operator, limit]);
     return result.rows;
   } catch (error) {
-    console.error(`Error fetching regions for operator ${operator}:`, error.message);
+    console.error(
+      `Error fetching regions for operator ${operator}:`,
+      error.message
+    );
     throw error;
   }
 }
