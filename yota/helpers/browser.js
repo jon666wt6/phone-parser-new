@@ -9,7 +9,7 @@ const { fetchProxyByType } = require("../database");
 
 puppeteer.use(StealthPlugin());
 
-async function initializeBrowserSession(proxyType, lastMaskIndex, lastOffset, region, mask_length) {
+async function initializeBrowserSession(proxyType, lastMaskIndex, lastOffset, region, mask_length, sessionState) {
   let proxy = await fetchProxyByType(proxyType);
 
   const browser = await puppeteer.launch({
@@ -48,7 +48,7 @@ async function initializeBrowserSession(proxyType, lastMaskIndex, lastOffset, re
     await page.authenticate({ username: proxy.username, password: proxy.password });
   }
 
-  await setupInterceptors(page, region, mask_length, proxyType, { lastMaskIndex, lastOffset });
+  await setupInterceptors(page, region, mask_length, sessionState, proxyType, { lastMaskIndex, lastOffset });
 
   try {
     await page.goto("https://www.yota.ru/phone-number", { timeout: 20000 });

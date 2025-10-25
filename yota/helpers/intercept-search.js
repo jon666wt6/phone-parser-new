@@ -8,7 +8,7 @@ function buildSearchUrl(region, mask, offset) {
   return `https://www.yota.ru/yws-api/number/search?region=${region}&searchType=adaptiveSearch&offset=${offset}&mask=${mask}`;
 }
 
-async function setupInterceptors(page, region, mask_length, proxyType, state) {
+async function setupInterceptors(page, region, mask_length, sessionState, proxyType, state) {
   let { lastMaskIndex, lastOffset } = state;
   let currentMaskIndex = lastMaskIndex;
   let currentOffset = lastOffset;
@@ -92,6 +92,8 @@ async function setupInterceptors(page, region, mask_length, proxyType, state) {
       const phonesToSave = parseAndPrepareData(rawData, region, "yota");
 
       if (phonesToSave.length > 0) {
+        sessionState.hasFoundNumbers = true;
+
         await savePhonesToLocalDB(phonesToSave, region, currentMaskIndex.toString().padStart(mask_length, "0"), currentOffset, proxyType);
 
         if (phonesToSave.length < 10) {
