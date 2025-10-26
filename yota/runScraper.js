@@ -6,7 +6,7 @@ const { initializeBrowserSession } = require("./helpers/browser");
 const operator = "yota";
 
 // Cooldown periods in milliseconds: 1s, 1m, 10m
-const cooldowns = [1_000, 60_000, 600_000];
+const cooldowns = [1_000, 60_000];
 let cooldownIndex = 0;
 
 async function runScraper(regions, proxyType) {
