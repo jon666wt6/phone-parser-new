@@ -2,7 +2,7 @@
 const { spawn } = require('child_process');
 
 // --- Configuration ---
-const SCRIPT_PATH = 'scraper/orchestrator.js';
+const SCRIPT_PATH = 'orchestrator.js';
 const RUN_DURATION_MS = 10 * 60 * 1000; // 10 minutes
 const WAIT_DURATION_MS = 20 * 60 * 1000; // 20 minutes
 // ---------------------
