@@ -1,0 +1,804 @@
+{
+    "isSucceeded": true,
+    "data": {
+        "listByRule": [
+            {
+                "result": "EXACT",
+                "list": [
+                    {
+                        "categoryTitle": "бронзовые",
+                        "alias": "bronzovie",
+                        "price": 1000.0,
+                        "type": 1,
+                        "info": null,
+                        "sale": 500,
+                        "numbers": [
+                            {
+                                "value": "9633999002",
+                                "formattedValue": "96Y3Y Y3Y Y999Y 002",
+                                "featureCode": "ECNL3",
+                                "key": "C2325CFE3B8110404124BFE280530545"
+                            },
+                            {
+                                "value": "9604340022",
+                                "formattedValue": "960 434 Y00Y Y22Y",
+                                "featureCode": "ECNL3",
+                                "key": "3EF5B0A72B3396A435D1A1DEC6729445"
+                            },
+                            {
+                                "value": "9626380022",
+                                "formattedValue": "962 638 Y00Y Y22Y",
+                                "featureCode": "ECNL3",
+                                "key": "9D4ABCFF2853A1945F293FA0BA029119"
+                            },
+                            {
+                                "value": "9626480022",
+                                "formattedValue": "962 648 Y00Y Y22Y",
+                                "featureCode": "ECNL3",
+                                "key": "7CC4BA31B16723944A8B17E4F50622F5"
+                            },
+                            {
+                                "value": "9631740022",
+                                "formattedValue": "963 174 Y00Y Y22Y",
+                                "featureCode": "ECNL3",
+                                "key": "71FC8CD98359885400715D9CFB4D5E1A"
+                            },
+                            {
+                                "value": "9633980022",
+                                "formattedValue": "963 398 Y00Y Y22Y",
+                                "featureCode": "ECNL3",
+                                "key": "F8C4806B645B7761DCD017EA00D92821"
+                            },
+                            {
+                                "value": "9640262002",
+                                "formattedValue": "964 026 Y20Y Y02Y",
+                                "featureCode": "ECNL3",
+                                "key": "948459C1EE5DBD0B691E45B671BE7340"
+                            },
+                            {
+                                "value": "9640562002",
+                                "formattedValue": "964 056 Y20Y Y02Y",
+                                "featureCode": "ECNL3",
+                                "key": "D3097FE23206F3AB5C0F3AA885F0DB7C"
+                            },
+                            {
+                                "value": "9626382002",
+                                "formattedValue": "962 638 Y20Y Y02Y",
+                                "featureCode": "ECNL3",
+                                "key": "C4C7F99827AD00674713D5BDC20CC0A7"
+                            },
+                            {
+                                "value": "9604333002",
+                                "formattedValue": "960 4 Y33Y 3 Y00Y 2",
+                                "featureCode": "ECNL3",
+                                "key": "2F4F2FDC0488165A85671DF795D54A65"
+                            },
+                            {
+                                "value": "9640590022",
+                                "formattedValue": "964 059 Y00Y Y22Y",
+                                "featureCode": "ECNL3",
+                                "key": "B8AAA0E7CE3409C9B79A365AE03FE43E"
+                            },
+                            {
+                                "value": "9626470022",
+                                "formattedValue": "962 647 Y00Y Y22Y",
+                                "featureCode": "ECNL3",
+                                "key": "CC6AA1A8B02CFAA79A16311A1A2913E1"
+                            },
+                            {
+                                "value": "9640250022",
+                                "formattedValue": "964 025 Y00Y Y22Y",
+                                "featureCode": "ECNL3",
+                                "key": "EBDB5EBED78D73DA5AF59FCB8C56D159"
+                            },
+                            {
+                                "value": "9626412002",
+                                "formattedValue": "962 641 Y20Y Y02Y",
+                                "featureCode": "ECNL3",
+                                "key": "603E7DEEAA17374F110B84AFC00EAF3B"
+                            },
+                            {
+                                "value": "9626444002",
+                                "formattedValue": "962 6 Y44Y 4 Y00Y 2",
+                                "featureCode": "ECNL3",
+                                "key": "07E30ED434A4A9DF6ACC93229DC044DF"
+                            },
+                            {
+                                "value": "9626452002",
+                                "formattedValue": "962 645 Y20Y Y02Y",
+                                "featureCode": "ECNL3",
+                                "key": "0A1276C01B4B64CB72393CF5EF8A1FB8"
+                            },
+                            {
+                                "value": "9631732002",
+                                "formattedValue": "963 173 Y20Y Y02Y",
+                                "featureCode": "ECNL3",
+                                "key": "A2A179FE96B1A643978D7699B9EFD0A6"
+                            },
+                            {
+                                "value": "9631752002",
+                                "formattedValue": "963 175 Y20Y Y02Y",
+                                "featureCode": "ECNL3",
+                                "key": "C4A327F4404D4293EBD2BB38A5498624"
+                            },
+                            {
+                                "value": "9640272002",
+                                "formattedValue": "964 027 Y20Y Y02Y",
+                                "featureCode": "ECNL3",
+                                "key": "88779A652214E4F8843DB4651A3F1148"
+                            },
+                            {
+                                "value": "9604352002",
+                                "formattedValue": "960 435 Y20Y Y02Y",
+                                "featureCode": "ECNL3",
+                                "key": "78A220C7F11D0858C56B58667FA12EBE"
+                            },
+                            {
+                                "value": "9626400023",
+                                "formattedValue": "962 64 Y000Y 23",
+                                "featureCode": "ECNL3",
+                                "key": "4AC5AC0A0E2DF13FE5DC30447E7C8B77"
+                            },
+                            {
+                                "value": "9626400029",
+                                "formattedValue": "962 64 Y000Y 29",
+                                "featureCode": "ECNL3",
+                                "key": "739913BBD2A06563507CC96D6AF2F592"
+                            },
+                            {
+                                "value": "9626400025",
+                                "formattedValue": "962 64 Y000Y 25",
+                                "featureCode": "ECNL3",
+                                "key": "4E552D024C68C48F261582E631EBD4FD"
+                            }
+                        ]
+                    },
+                    {
+                        "categoryTitle": "серебряные",
+                        "alias": "serebryanie",
+                        "price": 3000.0,
+                        "type": 2,
+                        "info": null,
+                        "sale": null,
+                        "numbers": [
+                            {
+                                "value": "9633990022",
+                                "formattedValue": "963 3 Y99Y Y00Y Y22Y",
+                                "featureCode": "ECNL2",
+                                "key": "18B901EF17E27D8ACABCE3E04F67EB46"
+                            }
+                        ]
+                    },
+                    {
+                        "categoryTitle": "бесплатные",
+                        "alias": "spetsialnyie",
+                        "price": 100.0,
+                        "type": 0,
+                        "info": null,
+                        "sale": null,
+                        "numbers": [
+                            {
+                                "value": "9604334002",
+                                "formattedValue": "960 4 Y33Y 4 Y00Y 2",
+                                "featureCode": "ECNA5",
+                                "key": "632936CB421606D95474250AC14CF448"
+                            },
+                            {
+                                "value": "9064883002",
+                                "formattedValue": "906 4 Y88Y 3 Y00Y 2",
+                                "featureCode": "ECNA5",
+                                "key": "B5EB6BAA037C0DA9DAEEF083887903C1"
+                            },
+                            {
+                                "value": "9604331002",
+                                "formattedValue": "960 4 Y33Y 1 Y00Y 2",
+                                "featureCode": "ECNA5",
+                                "key": "CE188956720452593F057D4D0C93CF7D"
+                            },
+                            {
+                                "value": "9604337002",
+                                "formattedValue": "960 4 Y33Y 7 Y00Y 2",
+                                "featureCode": "ECNA5",
+                                "key": "FEBB4B116AD18BF0B32E3C46BD25DD24"
+                            },
+                            {
+                                "value": "9604320021",
+                                "formattedValue": "960 432 00 21",
+                                "featureCode": "ECNA5",
+                                "key": "6562F0B396E9D06E5144CA8CB890E8E5"
+                            },
+                            {
+                                "value": "9626400275",
+                                "formattedValue": "962 640 02 75",
+                                "featureCode": "ECNA5",
+                                "key": "3C7428C25C04CF47B67E8DF01D9B85CA"
+                            },
+                            {
+                                "value": "9626400214",
+                                "formattedValue": "962 640 02 14",
+                                "featureCode": "ECNA5",
+                                "key": "8D83B95A152816CC7EEF6F76AE58C005"
+                            },
+                            {
+                                "value": "9604320023",
+                                "formattedValue": "960 432 00 23",
+                                "featureCode": "ECNA5",
+                                "key": "D4CEA4CE0A7A0E814977E955945FC4E7"
+                            },
+                            {
+                                "value": "9604340023",
+                                "formattedValue": "960 434 00 23",
+                                "featureCode": "ECNA5",
+                                "key": "B5EEFB5D07F9F01BC864B57BD0BCE43E"
+                            },
+                            {
+                                "value": "9626400215",
+                                "formattedValue": "962 640 02 15",
+                                "featureCode": "ECNA5",
+                                "key": "C3C63F6CF51D7BB3137CBA38D1C82556"
+                            },
+                            {
+                                "value": "9640298002",
+                                "formattedValue": "964 029 80 02",
+                                "featureCode": "ECNA5",
+                                "key": "3F87D3D194034806D8CFF8EA26B286BE"
+                            },
+                            {
+                                "value": "9640578002",
+                                "formattedValue": "964 057 80 02",
+                                "featureCode": "ECNA5",
+                                "key": "3F9F74A570CB0FE4F9E22A64287BACB7"
+                            },
+                            {
+                                "value": "9604326002",
+                                "formattedValue": "960 432 60 02",
+                                "featureCode": "ECNA5",
+                                "key": "8C4E377EF9D558DF0CF53C20F4CB201A"
+                            },
+                            {
+                                "value": "9626378002",
+                                "formattedValue": "962 637 80 02",
+                                "featureCode": "ECNA5",
+                                "key": "4663E885496541C7D38BC938A7BB00EF"
+                            },
+                            {
+                                "value": "9640560029",
+                                "formattedValue": "964 056 00 29",
+                                "featureCode": "ECNA5",
+                                "key": "CD3D67B4D0A996252DDBDDCDFD483E44"
+                            },
+                            {
+                                "value": "9640279002",
+                                "formattedValue": "964 027 90 02",
+                                "featureCode": "ECNA5",
+                                "key": "89452B70D48686B309C0A597141FF531"
+                            },
+                            {
+                                "value": "9640587002",
+                                "formattedValue": "964 058 70 02",
+                                "featureCode": "ECNA5",
+                                "key": "426ACB8C6FC5391786D0109DEA9511F5"
+                            },
+                            {
+                                "value": "9604320026",
+                                "formattedValue": "960 432 00 26",
+                                "featureCode": "ECNA5",
+                                "key": "3292040E16DBCDA5E6112A61AF9B13FB"
+                            },
+                            {
+                                "value": "9626400282",
+                                "formattedValue": "962 640 02 82",
+                                "featureCode": "ECNA5",
+                                "key": "B6DADBE949E014FF84E5AB552EF55E3E"
+                            },
+                            {
+                                "value": "9640570029",
+                                "formattedValue": "964 057 00 29",
+                                "featureCode": "ECNA5",
+                                "key": "EA1E3B76E4BC9A8DA993A17E73D6AB06"
+                            },
+                            {
+                                "value": "9626400269",
+                                "formattedValue": "962 640 02 69",
+                                "featureCode": "ECNA5",
+                                "key": "FD3A500989AC3E757BD803D7D2FCADFA"
+                            },
+                            {
+                                "value": "9064870027",
+                                "formattedValue": "906 487 00 27",
+                                "featureCode": "ECNA5",
+                                "key": "316040DDA157AA5C68F64A9ADD1A0872"
+                            },
+                            {
+                                "value": "9626400238",
+                                "formattedValue": "962 640 02 38",
+                                "featureCode": "ECNA5",
+                                "key": "225C83BA33B935B50E829CFECA227282"
+                            },
+                            {
+                                "value": "9626400257",
+                                "formattedValue": "962 640 02 57",
+                                "featureCode": "ECNA5",
+                                "key": "00CB473679BBB05BB87BD6CC0D3A6427"
+                            },
+                            {
+                                "value": "9604357002",
+                                "formattedValue": "960 435 70 02",
+                                "featureCode": "ECNA5",
+                                "key": "B34488D8591EDDD197043CBD2972FAE8"
+                            },
+                            {
+                                "value": "9626370026",
+                                "formattedValue": "962 637 00 26",
+                                "featureCode": "ECNA5",
+                                "key": "0D75FC012DD58842CC004CFA5B4A00C5"
+                            },
+                            {
+                                "value": "9626400298",
+                                "formattedValue": "962 640 02 98",
+                                "featureCode": "ECNA5",
+                                "key": "ABBCD893CE18FC343E4188E4B2B3594E"
+                            },
+                            {
+                                "value": "9064873002",
+                                "formattedValue": "906 487 30 02",
+                                "featureCode": "ECNA5",
+                                "key": "28F734C45D7AA39B0D08106CA9278492"
+                            },
+                            {
+                                "value": "9064870025",
+                                "formattedValue": "906 487 00 25",
+                                "featureCode": "ECNA5",
+                                "key": "DC176D22CF88354F65CB0959069BBD75"
+                            },
+                            {
+                                "value": "9626400233",
+                                "formattedValue": "962 640 02 33",
+                                "featureCode": "ECNA5",
+                                "key": "0B290687575F23D8213513033E407C16"
+                            },
+                            {
+                                "value": "9626400265",
+                                "formattedValue": "962 640 02 65",
+                                "featureCode": "ECNA5",
+                                "key": "9DE7C4D43DB8F06DD64E8BBBB08B5F53"
+                            },
+                            {
+                                "value": "9626400259",
+                                "formattedValue": "962 640 02 59",
+                                "featureCode": "ECNA5",
+                                "key": "13A4BB4275332286A69B947574BD4EB7"
+                            },
+                            {
+                                "value": "9626400291",
+                                "formattedValue": "962 640 02 91",
+                                "featureCode": "ECNA5",
+                                "key": "71F335A978FAAC482190A5145C29DDAE"
+                            },
+                            {
+                                "value": "9626400223",
+                                "formattedValue": "962 640 02 23",
+                                "featureCode": "ECNA5",
+                                "key": "54A28D56FB0EB324F82F404DDD386BF2"
+                            },
+                            {
+                                "value": "9626400255",
+                                "formattedValue": "962 640 02 55",
+                                "featureCode": "ECNA5",
+                                "key": "387C7F9C7A2A578F82113040D5D8F4D8"
+                            },
+                            {
+                                "value": "9626400287",
+                                "formattedValue": "962 640 02 87",
+                                "featureCode": "ECNA5",
+                                "key": "0F98BD5BFE32B4454007827EC103F5BA"
+                            },
+                            {
+                                "value": "9604320025",
+                                "formattedValue": "960 432 00 25",
+                                "featureCode": "ECNA5",
+                                "key": "CE4AAA69EBA8537AD329892FD8871CA7"
+                            },
+                            {
+                                "value": "9626400217",
+                                "formattedValue": "962 640 02 17",
+                                "featureCode": "ECNA5",
+                                "key": "A42E6B3ADA5069CACF069E01E0F4A9E4"
+                            },
+                            {
+                                "value": "9626400281",
+                                "formattedValue": "962 640 02 81",
+                                "featureCode": "ECNA5",
+                                "key": "A01E85285A6B485FA77D105D90542068"
+                            },
+                            {
+                                "value": "9626400219",
+                                "formattedValue": "962 640 02 19",
+                                "featureCode": "ECNA5",
+                                "key": "652D4F04C77C5C99CAD7AC597787A0DA"
+                            },
+                            {
+                                "value": "9626480027",
+                                "formattedValue": "962 648 00 27",
+                                "featureCode": "ECNA5",
+                                "key": "2DE4B645EF079C049691F9F3674DD300"
+                            },
+                            {
+                                "value": "9633980027",
+                                "formattedValue": "963 398 00 27",
+                                "featureCode": "ECNA5",
+                                "key": "4C2919DA012F5CB33876C25C5B1F8126"
+                            },
+                            {
+                                "value": "9640560027",
+                                "formattedValue": "964 056 00 27",
+                                "featureCode": "ECNA5",
+                                "key": "ACB8AF07D9FEDE4115F15D577743AD5B"
+                            },
+                            {
+                                "value": "9626400288",
+                                "formattedValue": "962 640 02 88",
+                                "featureCode": "ECNA5",
+                                "key": "841FA5E93B0EB8F9CA976A13D19A174A"
+                            },
+                            {
+                                "value": "9626400239",
+                                "formattedValue": "962 640 02 39",
+                                "featureCode": "ECNA5",
+                                "key": "D36BBC4561F0BB18296CBFE3A3BEBE06"
+                            },
+                            {
+                                "value": "9626400271",
+                                "formattedValue": "962 640 02 71",
+                                "featureCode": "ECNA5",
+                                "key": "DFEB696757534C82CDD942419B9D471C"
+                            },
+                            {
+                                "value": "9604344002",
+                                "formattedValue": "960 434 40 02",
+                                "featureCode": "ECNA5",
+                                "key": "985DFF2CB2E1A48D3024BF316BE9DBB8"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "result": "SML",
+                "list": [
+                    {
+                        "categoryTitle": "бронзовые",
+                        "alias": "bronzovie",
+                        "price": 1000.0,
+                        "type": 1,
+                        "info": null,
+                        "sale": 500,
+                        "numbers": [
+                            {
+                                "value": "9633999025",
+                                "formattedValue": "96Y3Y Y3Y Y999Y 025",
+                                "featureCode": "ECNL3",
+                                "key": "3409B4436C7A731657E8B15076007220"
+                            },
+                            {
+                                "value": "9640569009",
+                                "formattedValue": "964 056 Y90Y Y09Y",
+                                "featureCode": "ECNL3",
+                                "key": "E6594C4ECCB4B3E5C2933795048B8286"
+                            },
+                            {
+                                "value": "9034870033",
+                                "formattedValue": "903 487 Y00Y Y33Y",
+                                "featureCode": "ECNL3",
+                                "key": "B2CE64DB57C8ACE359A8C4A4CFC61040"
+                            },
+                            {
+                                "value": "9604333009",
+                                "formattedValue": "960 4 Y33Y 3 Y00Y 9",
+                                "featureCode": "ECNL3",
+                                "key": "05ADCC291BFBEE7B9DE65BB0BC4D705B"
+                            },
+                            {
+                                "value": "9626469009",
+                                "formattedValue": "962 646 Y90Y Y09Y",
+                                "featureCode": "ECNL3",
+                                "key": "CB212C8C1032B1301EC08B7B06EECED4"
+                            },
+                            {
+                                "value": "9626470033",
+                                "formattedValue": "962 647 Y00Y Y33Y",
+                                "featureCode": "ECNL3",
+                                "key": "6E485450D7BEAEF1147BFFC5958FE8E3"
+                            },
+                            {
+                                "value": "9631729009",
+                                "formattedValue": "963 172 Y90Y Y09Y",
+                                "featureCode": "ECNL3",
+                                "key": "1D414A614EA82B8B08EFD355108CBEC3"
+                            },
+                            {
+                                "value": "9633989009",
+                                "formattedValue": "963 398 Y90Y Y09Y",
+                                "featureCode": "ECNL3",
+                                "key": "70FF7BA86AA4CAEB6BF6A413B8D34F6E"
+                            },
+                            {
+                                "value": "9640251441",
+                                "formattedValue": "964 025 Y14Y Y41Y",
+                                "featureCode": "ECNL3",
+                                "key": "6A1017A8B3BA2D6EE837CEE4D65B0EBC"
+                            },
+                            {
+                                "value": "9640265265",
+                                "formattedValue": "964 0 Y265Y Y265Y",
+                                "featureCode": "ECNL3",
+                                "key": "26F11900286CAA4205824BF71FB504B9"
+                            },
+                            {
+                                "value": "9640273553",
+                                "formattedValue": "964 027 Y35Y Y53Y",
+                                "featureCode": "ECNL3",
+                                "key": "5737629973509A6DE749FDF5439F4DF8"
+                            },
+                            {
+                                "value": "9640291441",
+                                "formattedValue": "964 029 Y14Y Y41Y",
+                                "featureCode": "ECNL3",
+                                "key": "E7ED48CC47B9242E595797E91CF18C3C"
+                            },
+                            {
+                                "value": "9640297297",
+                                "formattedValue": "964 0 Y297Y Y297Y",
+                                "featureCode": "ECNL3",
+                                "key": "36EB6DED694D89A7643126FB66FD79D6"
+                            },
+                            {
+                                "value": "9640299921",
+                                "formattedValue": "964 02 Y999Y 21",
+                                "featureCode": "ECNL3",
+                                "key": "A4EECD2D7366D299CCA590C7B56C9532"
+                            },
+                            {
+                                "value": "9640299953",
+                                "formattedValue": "964 02 Y999Y 53",
+                                "featureCode": "ECNL3",
+                                "key": "F9AEF48076AFBFA95169801F585DD653"
+                            },
+                            {
+                                "value": "9640299985",
+                                "formattedValue": "964 02 Y999Y 85",
+                                "featureCode": "ECNL3",
+                                "key": "9F0A74694202107F9E61D2163AC7DC9E"
+                            },
+                            {
+                                "value": "9626400017",
+                                "formattedValue": "962 64 Y000Y 17",
+                                "featureCode": "ECNL3",
+                                "key": "51C9EDBB646F66D31D800C4AD17B1BC7"
+                            },
+                            {
+                                "value": "9626400081",
+                                "formattedValue": "962 64 Y000Y 81",
+                                "featureCode": "ECNL3",
+                                "key": "ECAB726A2BFDD65EF302A44F1FDBE639"
+                            },
+                            {
+                                "value": "9640255537",
+                                "formattedValue": "964 02 Y555Y 37",
+                                "featureCode": "ECNL3",
+                                "key": "4660AD678AEEFCAD36D9BC1ADD48CA37"
+                            },
+                            {
+                                "value": "9640266641",
+                                "formattedValue": "964 02 Y666Y 41",
+                                "featureCode": "ECNL3",
+                                "key": "5C1F71E54D48A82B92DFD273FF4140A2"
+                            },
+                            {
+                                "value": "9640266673",
+                                "formattedValue": "964 02 Y666Y 73",
+                                "featureCode": "ECNL3",
+                                "key": "69FC0F9263CAFBC4AD86CDF0F08614BD"
+                            },
+                            {
+                                "value": "9640268881",
+                                "formattedValue": "964 026 Y888Y 1",
+                                "featureCode": "ECNL3",
+                                "key": "69109293F4A7FE40FC0562293D11E3D5"
+                            },
+                            {
+                                "value": "9640274449",
+                                "formattedValue": "964 027 Y444Y 9",
+                                "featureCode": "ECNL3",
+                                "key": "CD9CB81EABC73EBE35943BE6DE627940"
+                            },
+                            {
+                                "value": "9640277713",
+                                "formattedValue": "964 02 Y777Y 13",
+                                "featureCode": "ECNL3",
+                                "key": "510416A49BDA781BD16D9659CF69E3D7"
+                            },
+                            {
+                                "value": "9640277745",
+                                "formattedValue": "964 02 Y777Y 45",
+                                "featureCode": "ECNL3",
+                                "key": "CCD40DAD2BE9A53FD5C501C2FD738A5F"
+                            },
+                            {
+                                "value": "9640285553",
+                                "formattedValue": "964 028 Y555Y 3",
+                                "featureCode": "ECNL3",
+                                "key": "872E9056050E59D50D0F1B6E6CB7C07C"
+                            },
+                            {
+                                "value": "9640294449",
+                                "formattedValue": "964 029 Y444Y 9",
+                                "featureCode": "ECNL3",
+                                "key": "1F2958071CCCE544036A6D035414511D"
+                            }
+                        ]
+                    },
+                    {
+                        "categoryTitle": "серебряные",
+                        "alias": "serebryanie",
+                        "price": 3000.0,
+                        "type": 2,
+                        "info": null,
+                        "sale": null,
+                        "numbers": [
+                            {
+                                "value": "9626408020",
+                                "formattedValue": "962 6 Y40Y Y80Y Y20Y",
+                                "featureCode": "ECNL2",
+                                "key": "73F9085C54B65F9411DB7F82BEE9FCB9"
+                            },
+                            {
+                                "value": "9626402070",
+                                "formattedValue": "962 6 Y40Y Y20Y Y70Y",
+                                "featureCode": "ECNL2",
+                                "key": "AD6B4759110CCFDB30D0B8416F25411F"
+                            },
+                            {
+                                "value": "9633990044",
+                                "formattedValue": "963 3 Y99Y Y00Y Y44Y",
+                                "featureCode": "ECNL2",
+                                "key": "F2A667B108BEF98A7EAC317963A77115"
+                            },
+                            {
+                                "value": "9604331100",
+                                "formattedValue": "960 4 Y33Y Y11Y Y00Y",
+                                "featureCode": "ECNL2",
+                                "key": "D0EA50415E1BD415299E9F0EB5626CA8"
+                            },
+                            {
+                                "value": "9626405020",
+                                "formattedValue": "962 6 Y40Y Y50Y Y20Y",
+                                "featureCode": "ECNL2",
+                                "key": "BF61C998CD8DD20F0D2E8AF1497B3F0D"
+                            },
+                            {
+                                "value": "9064880055",
+                                "formattedValue": "906 4 Y88Y Y00Y Y55Y",
+                                "featureCode": "ECNL2",
+                                "key": "187884DB1F109F8567664751E299B4A9"
+                            },
+                            {
+                                "value": "9633990055",
+                                "formattedValue": "963 3 Y99Y Y00Y Y55Y",
+                                "featureCode": "ECNL2",
+                                "key": "06D2BE6606651F954834D567220CFF46"
+                            },
+                            {
+                                "value": "9626402060",
+                                "formattedValue": "962 6 Y40Y Y20Y Y60Y",
+                                "featureCode": "ECNL2",
+                                "key": "677670F3ED0600DCC89ABB51C4562A8F"
+                            },
+                            {
+                                "value": "9626407020",
+                                "formattedValue": "962 6 Y40Y Y70Y Y20Y",
+                                "featureCode": "ECNL2",
+                                "key": "36BD4FE260F54D3A20E8643A835DF3BB"
+                            },
+                            {
+                                "value": "9626402010",
+                                "formattedValue": "962 6 Y40Y Y20Y Y10Y",
+                                "featureCode": "ECNL2",
+                                "key": "211F930C69B12793CF507E3F47017F55"
+                            },
+                            {
+                                "value": "9626440077",
+                                "formattedValue": "962 6 Y44Y Y00Y Y77Y",
+                                "featureCode": "ECNL2",
+                                "key": "5746171FB03B64C13B192507FFEB153A"
+                            },
+                            {
+                                "value": "9626440011",
+                                "formattedValue": "962 6 Y44Y Y00Y Y11Y",
+                                "featureCode": "ECNL2",
+                                "key": "E50B210918F4D12930C5F6AEB7D4A6D6"
+                            },
+                            {
+                                "value": "9064880033",
+                                "formattedValue": "906 4 Y88Y Y00Y Y33Y",
+                                "featureCode": "ECNL2",
+                                "key": "9940CB1CC1470D4A949E95C73F8B4B6C"
+                            },
+                            {
+                                "value": "9604337700",
+                                "formattedValue": "960 4 Y33Y Y77Y Y00Y",
+                                "featureCode": "ECNL2",
+                                "key": "0B3EC3CCD955CEB6F8768557C1311A71"
+                            },
+                            {
+                                "value": "9626406020",
+                                "formattedValue": "962 6 Y40Y Y60Y Y20Y",
+                                "featureCode": "ECNL2",
+                                "key": "5922753B8C6B3774881D9D1C6DC5A0DA"
+                            },
+                            {
+                                "value": "9626443300",
+                                "formattedValue": "962 6 Y44Y Y33Y Y00Y",
+                                "featureCode": "ECNL2",
+                                "key": "59A4E2FE93B77ECE9A5D5AD8837FC000"
+                            },
+                            {
+                                "value": "9604330088",
+                                "formattedValue": "960 4 Y33Y Y00Y Y88Y",
+                                "featureCode": "ECNL2",
+                                "key": "40F03D0CCA791FA335503E7764D310D3"
+                            },
+                            {
+                                "value": "9633994400",
+                                "formattedValue": "963 3 Y99Y Y44Y Y00Y",
+                                "featureCode": "ECNL2",
+                                "key": "D662C4F9B097EFCF2775124A3044EF64"
+                            },
+                            {
+                                "value": "9626402050",
+                                "formattedValue": "962 6 Y40Y Y20Y Y50Y",
+                                "featureCode": "ECNL2",
+                                "key": "A80FB2132477AAF074520CDCF3420228"
+                            },
+                            {
+                                "value": "9626404020",
+                                "formattedValue": "962 640 40 20",
+                                "featureCode": "ECNL2",
+                                "key": "89F30AD85FAD7BFE4E89512CDD8588DA"
+                            }
+                        ]
+                    },
+                    {
+                        "categoryTitle": "бесплатные",
+                        "alias": "spetsialnyie",
+                        "price": 100.0,
+                        "type": 0,
+                        "info": null,
+                        "sale": null,
+                        "numbers": [
+                            {
+                                "value": "9640298193",
+                                "formattedValue": "964 029 81 93",
+                                "featureCode": "ECNA5",
+                                "key": "3BD1BFB35B324F0FE3899862F29881CF"
+                            },
+                            {
+                                "value": "9640298257",
+                                "formattedValue": "964 029 82 57",
+                                "featureCode": "ECNA5",
+                                "key": "F1637CD2749150E35C0B1E2C54BA7943"
+                            },
+                            {
+                                "value": "9640298321",
+                                "formattedValue": "964 029 83 21",
+                                "featureCode": "ECNA5",
+                                "key": "FB7AC0AD8A66A584A3FAFF00B253EB20"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "message": null
+}

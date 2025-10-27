@@ -1,0 +1,22 @@
+curl -x http://ehpuzgormucglqk90999-zone-resi-region-ru:fjtwjusjzb@resi-eu.lightningproxies.net:9999 'https://moskva.beeline.ru/fancynumber/favourite/?number=999' \
+  -X 'POST' \
+  -H 'accept: */*' \
+  -H 'accept-language: en-GB,en-US;q=0.9,en;q=0.8' \
+  -H 'baggage: sentry-environment=production,sentry-public_key=97facc1b871146e9ba88967b2c006545,sentry-trace_id=fc6a2df73757471980e464dce520edf8, sentry-environment=production,sentry-public_key=97facc1b871146e9ba88967b2c006545,sentry-trace_id=fc6a2df73757471980e464dce520edf8' \
+  -H 'content-length: 0' \
+  -b 'ARRAffinityUWEBq=d431253d558d68ea74eb77edb3273241d70ca02c6832d8db57e6a3e916623679; abt_b2c_new_basket=true; _userGUID=0:m9fojwb3:dDTDlDBV26chj_vAmPM7V7Kn3lqhI411; advcake_track_id=5f816a8d-3b67-782b-966c-8c6a237af6ac; advcake_track_url=; advcake_session_id=63d3e7f0-2b76-7ce6-4004-997bd2669f97; tmr_lvid=ec28613c3eae11d082fc0489340625c7; tmr_lvidTS=1744550883237; _ymab_param=ih_5Xfrhad_9FeCmNdxqS6cnjtdru_0g2OBD8MyClDrmFV2Lx9ow0PtS2zdryyS6Cpe1jOf9GxNrIt7lU8WwS-t_EZ4; isAuthorized=0; chat_auth_zone=unauthorized; tmr_detect=0%7C1744550888093' \
+  -H 'origin: https://moskva.beeline.ru' \
+  -H 'priority: u=1, i' \
+  -H 'referer: https://moskva.beeline.ru/customers/products/mobile/services/details/nomer-na-vybor/krasivie-nomera/?filter=lyubimoe-chislo' \
+  -H 'sec-ch-ua: "Google Chrome";v="135", "Not-A.Brand";v="8", "Chromium";v="135"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "macOS"' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: same-origin' \
+  -H 'sentry-trace: fc6a2df73757471980e464dce520edf8-9e7af902f5dcb5ac, fc6a2df73757471980e464dce520edf8-9e7af902f5dcb5ac' \
+  -H 'user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36' \
+  -H 'x-request-id: a39b2c3d4a7e8f2e3ba1b2c379a0be47ae5f6905c6dc6489c0dfb43a4b61e2f08cb7a8b97ce495aa4689ac634e01b6b2d96cc9e2' \
+  -H 'x-request-sign: 46565cc1600cf897d48608ae1971db1b3392924034fcb8c36f65e85ffd918648' \
+  -H 'x-request-timestamp: 2025-04-13T13:28:39.161Z' \
+  -H 'x-requested-with: XMLHttpRequest'
