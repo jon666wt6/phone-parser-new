@@ -1,0 +1,8 @@
+host
+pskov.beeline.ru
+
+sitekey
+ysc1_6YDvgldfgd9oPW0PTlHFsP89FRYZZNsgUKpdYgVr6c46c134
+
+href
+https%3A%2F%2Fpskov.beeline.ru%2Fcustomers%2Fproducts%2Fkrasivie-nomera%2F%3Fcategories%3Dbronzovie_serebryanie_zolotie%26filter%3Dlyubimoe-chislo

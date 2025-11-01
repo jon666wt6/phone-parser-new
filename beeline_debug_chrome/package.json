@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "ghost-cursor": "^1.4.1",
+    "pg": "^8.16.3",
+    "puppeteer": "^24.27.0",
+    "puppeteer-extra": "^3.3.6",
+    "puppeteer-extra-plugin-stealth": "^2.11.2",
+    "random-useragent": "^0.5.0"
+  }
+}

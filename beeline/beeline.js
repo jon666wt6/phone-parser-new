@@ -33,11 +33,11 @@ async function runBeeline(region) {
       const url = `https://${region}.beeline.ru/customers/products/mobile/services/details/nomer-na-vybor/krasivie-nomera/?filter=lyubimoe-chislo`;
       console.log(`[${region}] goto ${url}`);
 
-      await page.goto(url, { waitUntil: "domcontentloaded", timeout: 60000 });
+      await page.goto(url, { waitUntil: "domcontentloaded", timeout: 600000 });
 
       const inputSel = "input[data-t-id=components-UnlockedInput]";
       const buttonSel = 'details[data-t-id="pagesContainers-ExpandingContainer"] section p';
-      await page.waitForSelector(inputSel, { visible: true, timeout: 60000 });
+      await page.waitForSelector(inputSel, { visible: true, timeout: 600000 });
 
       const cursor = getCursor(page);
       console.log(`[${region}] loop`);
@@ -64,8 +64,8 @@ async function runBeeline(region) {
               }
 
               // Reload the page and wait for it to be ready again.
-              await page.reload({ waitUntil: "domcontentloaded", timeout: 60000 });
-              await page.waitForSelector(inputSel, { visible: true, timeout: 60000 });
+              await page.reload({ waitUntil: "domcontentloaded", timeout: 600000 });
+              await page.waitForSelector(inputSel, { visible: true, timeout: 600000 });
             } else {
               // It's a different, unrecoverable error. Throw it up to the main catch block.
               console.log(`${tag} Unrecoverable error: ${e.message}`);

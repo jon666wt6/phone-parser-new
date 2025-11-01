@@ -1,0 +1,24 @@
+2025/10/31-18:24:40.107 38aa83 Reusing MANIFEST /Volumes/x.x/NEW_FOLDER/beeline_debug_chrome/automation_profile/Profile 10/Local Storage/leveldb/MANIFEST-000001
+2025/10/31-18:24:40.112 38aa83 Recovering log #172
+2025/10/31-18:24:40.113 38aa83 Reusing old log /Volumes/x.x/NEW_FOLDER/beeline_debug_chrome/automation_profile/Profile 10/Local Storage/leveldb/000172.log 
+2025/10/31-19:11:03.882 38aa86 Level-0 table #176: started
+2025/10/31-19:11:03.886 38aa86 Level-0 table #176: 23701 bytes OK
+2025/10/31-19:11:03.897 38aa86 Delete type=0 #172
+2025/10/31-19:11:41.399 38aa86 Level-0 table #178: started
+2025/10/31-19:11:41.402 38aa86 Level-0 table #178: 19483 bytes OK
+2025/10/31-19:11:41.412 38aa86 Delete type=0 #175
+2025/10/31-19:11:41.413 38aa86 Compacting 4@0 + 1@1 files
+2025/10/31-19:11:41.419 38aa86 Generated table #179@0: 345 keys, 50810 bytes
+2025/10/31-19:11:41.419 38aa86 Compacted 4@0 + 1@1 files => 50810 bytes
+2025/10/31-19:11:41.423 38aa86 compacted to: files[ 0 1 1 0 0 0 0 ]
+2025/10/31-19:11:41.424 38aa86 Delete type=2 #176
+2025/10/31-19:11:41.424 38aa86 Delete type=2 #173
+2025/10/31-19:11:41.424 38aa86 Delete type=2 #167
+2025/10/31-19:11:41.424 38aa86 Delete type=2 #170
+2025/10/31-19:11:41.424 38aa86 Delete type=2 #178
+2025/10/31-19:13:28.571 38aa86 Level-0 table #181: started
+2025/10/31-19:13:28.576 38aa86 Level-0 table #181: 19699 bytes OK
+2025/10/31-19:13:28.587 38aa86 Delete type=0 #177
+2025/10/31-19:21:32.686 38aa86 Level-0 table #183: started
+2025/10/31-19:21:32.696 38aa86 Level-0 table #183: 33450 bytes OK
+2025/10/31-19:21:32.723 38aa86 Delete type=0 #180
