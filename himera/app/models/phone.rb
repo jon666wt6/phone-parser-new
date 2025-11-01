@@ -9,7 +9,7 @@ class Phone < ApplicationRecord
   scope :with_phone_datum, -> { joins(:phone_datum) }
   scope :with_userbox_explain, -> { joins(:phone_datum).where.not(phone_data: { userbox_explain: nil }) }
 
-  scope :_new, -> { where(status: 'new') }
+  scope :new_s, -> { where(status: 'new') }
   scope :exported, -> { where(status: 'exported') }
 
   scope :yota, -> { where(operator: 'yota') }
